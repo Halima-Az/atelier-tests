@@ -12,6 +12,4 @@ COPY package.json ./
 COPY src ./src
 USER node
 EXPOSE 3000
-HEALTHCHECK --interval=30s --timeout=3s \
-CMD wget -qO- http://localhost:3000/login.html || exit 1
 CMD ["node", "src/server.js"]
